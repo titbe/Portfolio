@@ -41,13 +41,19 @@ export default function Home() {
             speed={100}
           />
           <div className="flex space-x-6 justify-end">
-            <a href="https://www.facebook.com/pham.minh.hieu.677056">
+            <a
+              href="https://www.facebook.com/pham.minh.hieu.677056"
+              target="_blank"
+            >
               <Facebook className="hover:text-[#0866FF] hover:scale-150 transition-all duration-150" />
             </a>
-            <a href="https://www.linkedin.com/in/minh-hi%E1%BA%BFu-ph%E1%BA%A1m-453602327/">
+            <a
+              href="https://www.linkedin.com/in/minh-hi%E1%BA%BFu-ph%E1%BA%A1m-453602327/"
+              target="_blank"
+            >
               <Linkedin className="hover:text-[#0A66C2] hover:scale-150 transition-all duration-150" />
             </a>
-            <a href="https://github.com/titbe">
+            <a href="https://github.com/titbe" target="_blank">
               <Github className="hover:scale-150 transition-all duration-150" />
             </a>
           </div>
