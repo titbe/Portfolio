@@ -3,5 +3,5 @@ export const profileInfo = [
   { label: "Location", value: "Hanoi, Vietnam" },
   { label: "Email", value: "phamminhhieu01082003@gmail.com" },
   { label: "Age", value: "22" },
-  { label: "Website", value: "" },
+  { label: "Website", value: "https://portfolio-hieuhhs-projects.vercel.app" },
 ];

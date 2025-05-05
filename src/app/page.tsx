@@ -1,5 +1,3 @@
-import Image from "next/image";
-import hanoiBackground from "../../public/imgs/hanoi-background.jpg";
 import { ResumePage } from "./resume/page";
 import { ProfilePage } from "./profile/page";
 import { HomePage } from "./home/page";

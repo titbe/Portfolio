@@ -10,19 +10,21 @@ export const ResumePage = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.3 } // bạn có thể điều chỉnh ngưỡng
+      { threshold: 0.3 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-
+  
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
+  
 
   return (
     <div
