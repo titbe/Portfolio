@@ -6,14 +6,14 @@ export default function Home() {
   return (
     <div>
       {/* Home Section */}
-      <section id="home" className="relative w-screen h-screen overflow-hidden">
+      <section id="home" className="relative h-screen overflow-hidden">
         <HomePage />
       </section>
 
       {/* Profile Section */}
       <section
         id="profile"
-        className="relative w-screen min-h-screen py-16 md:h-screen md:py-0"
+        className="relative min-h-screen py-16 md:h-screen md:py-0"
       >
         <ProfilePage />
       </section>
@@ -21,7 +21,7 @@ export default function Home() {
       {/* Resume Section */}
       <section
         id="resume"
-        className="relative w-screen min-h-screen overflow-hidden my-3"
+        className="relative min-h-screen overflow-hidden my-3"
       >
         <ResumePage/>
       </section>
@@ -29,7 +29,7 @@ export default function Home() {
       {/* Dashboard Section */}
       {/* <section
         id="dashboard"
-        className="relative w-screen h-screen overflow-hidden"
+        className="relative h-screen overflow-hidden"
       >
         <Image
           src={hanoiBackground}
@@ -52,7 +52,7 @@ export default function Home() {
       {/* Account Section */}
       {/* <section
         id="account"
-        className="relative w-screen h-screen overflow-hidden"
+        className="relative h-screen overflow-hidden"
       >
         <Image
           src={hanoiBackground}
@@ -75,7 +75,7 @@ export default function Home() {
       {/* Config Section */}
       {/* <section
         id="config"
-        className="relative w-screen h-screen overflow-hidden"
+        className="relative h-screen overflow-hidden"
       >
         <Image
           src={hanoiBackground}
