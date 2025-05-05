@@ -17,7 +17,7 @@ const menuItems: MenuItem[] = [
   { icon: <Settings />, text: "Config", sectionId: "config" },
 ];
 
-export const SidebarMenu = () => {
+const SidebarMenu = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isOpen, setIsOpen] = useState(false); // mobile mặc định đóng
 
@@ -99,3 +99,4 @@ export const SidebarMenu = () => {
     </>
   );
 };
+export default SidebarMenu;

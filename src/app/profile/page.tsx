@@ -4,7 +4,7 @@ import portraitPhoto from "../../../public/imgs/portrait-photo.jpg";
 import { profileInfo } from "@/data/data";
 import { ChevronRight } from "lucide-react";
 
-export const ProfilePage = () => {
+const ProfilePage = () => {
   const midIndex = Math.ceil(profileInfo.length / 2);
   const firstHalf = profileInfo.slice(0, midIndex);
   const secondHalf = profileInfo.slice(midIndex);
@@ -70,3 +70,5 @@ export const ProfilePage = () => {
     </>
   );
 };
+
+export default ProfilePage;

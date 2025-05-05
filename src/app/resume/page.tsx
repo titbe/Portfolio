@@ -3,7 +3,7 @@
 import AnimatedCounter from "@/components/AnimatedCounter";
 import React, { useRef, useState, useEffect } from "react";
 
-export const ResumePage = () => {
+const ResumePage = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -12,19 +12,18 @@ export const ResumePage = () => {
       ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.3 }
     );
-  
+
     const currentRef = sectionRef.current;
     if (currentRef) {
       observer.observe(currentRef);
     }
-  
+
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
     };
   }, []);
-  
 
   return (
     <div
@@ -148,3 +147,5 @@ export const ResumePage = () => {
     </div>
   );
 };
+
+export default ResumePage;

@@ -1,11 +1,11 @@
-import { SidebarMenu } from "@/components/SidebarMenu";
+import SidebarMenu from "@/components/SidebarMenu";
 import Typewriter from "@/components/Typewriter";
 import { Facebook, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import hanoiBackground from "../../../public/imgs/hanoi-background.jpg";
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
       <Image
@@ -48,3 +48,4 @@ export const HomePage = () => {
     </>
   );
 };
+export default HomePage;
