@@ -1,5 +1,5 @@
 "use client";
-import { House, Settings, User, Menu, X } from "lucide-react";
+import { House, Settings, User, Menu, X, FileText } from "lucide-react";
 import { ReactNode, useState, useEffect } from "react";
 
 interface MenuItem {
@@ -11,7 +11,7 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   { icon: <House />, text: "Home", sectionId: "home" },
   { icon: <User />, text: "Profile", sectionId: "profile" },
-  { icon: <Settings />, text: "Settings", sectionId: "settings" },
+  { icon: <FileText />, text: "Resume", sectionId: "resume" },
   { icon: <House />, text: "Dashboard", sectionId: "dashboard" },
   { icon: <User />, text: "Account", sectionId: "account" },
   { icon: <Settings />, text: "Config", sectionId: "config" },
@@ -83,9 +83,7 @@ export const SidebarMenu = () => {
             <button
               onClick={() => scrollToSection(item.sectionId)}
               className={`rounded-full p-3 flex items-center overflow-hidden transition-all duration-300 ease-in-out ${
-                activeSection === item.sectionId
-                  ? "bg-sky-700"
-                  : "bg-slate-300"
+                activeSection === item.sectionId ? "bg-sky-700" : "bg-slate-300"
               } hover:bg-sky-700`}
             >
               <div className="transition-transform duration-500">
