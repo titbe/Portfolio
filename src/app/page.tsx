@@ -29,7 +29,7 @@ export default function Home() {
       </section>
 
       {/* Dashboard Section */}
-      <section
+      {/* <section
         id="dashboard"
         className="relative w-screen h-screen overflow-hidden"
       >
@@ -49,10 +49,10 @@ export default function Home() {
             View my latest projects and statistics.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Account Section */}
-      <section
+      {/* <section
         id="account"
         className="relative w-screen h-screen overflow-hidden"
       >
@@ -72,10 +72,10 @@ export default function Home() {
             Contact information and professional details.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Config Section */}
-      <section
+      {/* <section
         id="config"
         className="relative w-screen h-screen overflow-hidden"
       >
@@ -95,7 +95,7 @@ export default function Home() {
             Additional configuration options and preferences.
           </p>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
