@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "My Portfolio hieu",
   description: "My personal portfolio built with Next.js and Tailwind CSS",
+  icons: {
+    icon: "/logo.ico", // hoặc favicon.png, svg
+  },
 };
 
 export default function RootLayout({

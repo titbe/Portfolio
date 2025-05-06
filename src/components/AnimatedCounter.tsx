@@ -3,46 +3,61 @@
 import { useEffect, useState } from "react";
 
 type AnimatedCounterProps = {
-  target: number;
-  duration?: number; // thoi gian chay so (ms)
-  suffix?: string; // don vi dang sau so target (htai de %)
-  isVisible: boolean; // kiem tra khi nao den section Resume moi hien animate number counter 
+  endValue: number;
+  isVisible: boolean;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
 };
 
 const AnimatedCounter = ({
-  target,
-  duration = 2000,
-  suffix = "%",
+  endValue,
   isVisible,
+  duration = 2000,
+  prefix = "",
+  suffix = "%",
 }: AnimatedCounterProps) => {
   const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (!isVisible) return;
+    // Reset when not visible
+    if (!isVisible) {
+      setCount(0);
+      setHasAnimated(false);
+      return;
+    }
 
-    let start = 0;
-    const increment = target / (duration / 16); // ~60fps
+    // Don't re-animate if already animated and still visible
+    if (hasAnimated && isVisible) return;
+
+    // Animation logic
+    let current = 0;
+    const increment = endValue / (duration / 16); // ~60fps
     let rafId: number;
 
     const step = () => {
-      start += increment;
-      if (start < target) {
-        setCount(Math.floor(start));
+      current += increment;
+      if (current < endValue) {
+        setCount(Math.floor(current));
         rafId = requestAnimationFrame(step);
       } else {
-        setCount(target);
+        setCount(endValue);
+        setHasAnimated(true);
         cancelAnimationFrame(rafId);
       }
     };
 
     rafId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(rafId);
-  }, [isVisible, target, duration]);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+    };
+  }, [isVisible, endValue, duration, hasAnimated]);
 
   return (
     <span>
-      {count}
-      {suffix}
+      {prefix}{count}{suffix}
     </span>
   );
 };

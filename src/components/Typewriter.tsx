@@ -61,12 +61,12 @@ const Typewriter = ({
   }, [currentTextIndex, displayedText, isDeleting, isWaiting, texts, speed]);
 
   return (
-    <div className="flex gap-2 font-mono text-2xl text-gray-800 italic">
+    <div className="flex gap-2 font-mono text-2xl text-gray-800">
       <p>I&rsquo;m</p>
-      <div>
+      <p className="italic underline decoration-[rgb(5,99,187)]">
         {displayedText}
-        <span className={isTyping ? "" : "animate-blink-fast"}>|</span>
-      </div>
+      </p>
+      <span className={isTyping ? "" : "animate-blink-fast"}>|</span>
     </div>
   );
 };

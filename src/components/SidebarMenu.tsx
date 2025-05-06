@@ -1,5 +1,6 @@
 "use client";
 import { House, Settings, User, Menu, X, FileText } from "lucide-react";
+import Image from "next/image";
 import { ReactNode, useState, useEffect } from "react";
 
 interface MenuItem {
@@ -66,10 +67,24 @@ const SidebarMenu = () => {
     <>
       {/* Toggle Button chỉ hiện ở mobile */}
       <button
-        className="fixed left-5 top-5 z-50 bg-sky-700 text-white p-2 rounded-full md:hidden"
+        className="fixed left-5 top-20 z-50 bg-sky-700 text-white p-2 rounded-full md:hidden"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+      <button
+        onClick={() => {
+          scrollToSection("home");
+        }}
+        className="fixed top-16 left-5 inline-flex items-center gap-2 z-50 group" // thêm group
+      >
+        <Image
+          src="/logo.ico"
+          alt="Logo"
+          width={80}
+          height={80}
+          className="rounded-md"
+        />
       </button>
 
       {/* Sidebar */}

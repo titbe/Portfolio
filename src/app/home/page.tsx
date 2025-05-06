@@ -21,7 +21,7 @@ const HomePage = () => {
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-20 text-right z-10 flex flex-col items-end gap-2">
         <h1 className="w-full text-7xl font-bold z-20 text-[rgb(69,80,91)]">
-          Phạm Minh Hiếu
+          Pham Minh Hieu
         </h1>
         <Typewriter
           texts={["Hiếu", "a Web developer", "Fullstack Developer"]}
