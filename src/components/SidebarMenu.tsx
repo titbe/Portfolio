@@ -67,7 +67,7 @@ const SidebarMenu = () => {
     <>
       {/* Toggle Button chỉ hiện ở mobile */}
       <button
-        className="fixed left-5 top-20 z-50 bg-sky-700 text-white p-2 rounded-full md:hidden"
+        className="fixed left-5 top-24 z-50 bg-sky-700 text-white p-2 rounded-full md:hidden"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -76,7 +76,7 @@ const SidebarMenu = () => {
         onClick={() => {
           scrollToSection("home");
         }}
-        className="fixed top-16 left-5 inline-flex items-center gap-2 z-50 group" // thêm group
+        className="fixed top-2 left-2 inline-flex items-center gap-2 z-50 group" // thêm group
       >
         <Image
           src="/logo.ico"

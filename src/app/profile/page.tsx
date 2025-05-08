@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import portraitPhoto from "../../../public/imgs/portrait-photo.jpg";
 import { ChevronRight } from "lucide-react";
+import { getAge } from "@/utils/common";
 
 const ProfilePage = () => {
   return (
@@ -14,14 +15,14 @@ const ProfilePage = () => {
           Profile
         </h1>
         <p className="text-base text-gray-700 text-center w-full">
-          With a passion for building and developing modern web applications, I
-          aspire to become a professional Web Developer, where I can leverage my
-          knowledge to create exceptional user experiences. My goal is to
-          continuously learn and stay updated with new technologies, thereby
-          contributing to the success of projects by building optimized,
-          user-friendly, and highly secure web products. I am eager to work in a
-          creative and challenging environment where I can grow my career and
-          achieve great accomplishments with the company.
+          A passionate and detail-oriented Front-end Developer with a strong
+          foundation in UI/UX principles, specializing in building responsive
+          and user-friendly web applications using React, Next.js, and Tailwind
+          CSS. I strive to write clean, maintainable code and continuously
+          improve my skills to stay updated with modern web technologies. My
+          goal is to create exceptional user experiences and contribute to the
+          success of projects in collaborative, creative, and challenging
+          environments.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full items-start md:items-center">
@@ -85,15 +86,15 @@ const ProfilePage = () => {
                     <ChevronRight color="#0563bb" size={20} />
                     <strong>Age:</strong>
                   </div>
-                  <p>Current year - 2003 = My age</p>
+                  <p>{getAge(2003)}</p>
                 </li>
                 <li className="grid grid-cols-[auto_1fr] items-start gap-2 text-gray-700">
                   <div className="flex items-center gap-2">
                     <ChevronRight color="#0563bb" size={20} />
                     <strong>Phone number:</strong>
                   </div>
-                  <a href="tel:0355564823" className="hover:underline">
-                    0355564823
+                  <a href="tel:0835556482" className="hover:underline">
+                    0835556482
                   </a>
                 </li>
               </ul>

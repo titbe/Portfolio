@@ -2,7 +2,7 @@
 
 import AnimatedCounter from "@/components/AnimatedCounter";
 import SkillProgress from "@/components/SkillProgress";
-import { Smile } from "lucide-react";
+import { CalendarCheck, Clock, Flame, Users } from "lucide-react";
 import React, { useRef, useState, useEffect } from "react";
 
 const ResumePage = () => {
@@ -38,15 +38,54 @@ const ResumePage = () => {
       <h1 className="text-5xl font-bold text-[rgb(69,80,91)] border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
         Resume
       </h1>
-      <p className="text-xl text-gray-700 text-center">
-        A passionate and detail-oriented Front-end Developer specializing in
-        building responsive, user-friendly web applications using React,
-        Next.js, and Tailwind CSS. With a strong foundation in UI/UX principles
-        and a commitment to clean, maintainable code, I enjoy transforming ideas
-        into intuitive and visually appealing interfaces. I continuously seek to
-        improve my skills, stay updated with modern web technologies, and
-        contribute effectively to collaborative development environments.
-      </p>
+
+      {/* Soft Skills */}
+      <div className="grid grid-cols-4 w-full mt-5">
+        <div className="flex flex-col items-center">
+          <div className="rounded-full bg-[rgb(5,99,187)] p-5">
+            <Users color="white" />
+          </div>
+          <span className="font-bold text-4xl text-[#272829CC]">
+            <AnimatedCounter endValue={95} isVisible={isVisible} />
+          </span>
+          <p className="text-[#27282980] text-center break-words max-w-[150px]">
+            Team work
+          </p>
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="rounded-full bg-[rgb(5,99,187)] p-5">
+            <Clock color="white" />
+          </div>
+          <span className="font-bold text-4xl text-[#272829CC]">
+            <AnimatedCounter endValue={85} isVisible={isVisible} />
+          </span>
+          <p className="text-[#27282980] text-center break-words max-w-[150px]">
+            Time management
+          </p>
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="rounded-full bg-[rgb(5,99,187)] p-5">
+            <Flame color="white" />
+          </div>
+          <span className="font-bold text-4xl text-[#272829CC]">
+            <AnimatedCounter endValue={80} isVisible={isVisible} />
+          </span>
+          <p className="text-[#27282980] text-center break-words max-w-[150px]">
+            Work under high pressure
+          </p>
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="rounded-full bg-[rgb(5,99,187)] p-5">
+            <CalendarCheck color="white" />
+          </div>
+          <span className="font-bold text-4xl text-[#272829CC]">
+            <AnimatedCounter endValue={90} isVisible={isVisible} />
+          </span>
+          <p className="text-[#27282980] text-center break-words max-w-[150px]">
+            Arrange work
+          </p>
+        </div>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-5 w-full px-3">
         <div className="">
@@ -58,7 +97,8 @@ const ResumePage = () => {
           <div className="border-[rgb(5,99,187)] border-l-2 pl-5">
             <h4 className="text-lg font-bold text-gray-500 mb-1">Frontend</h4>
             <p className="italic">
-              HTML/CSS/Javascript/Typescript/Tailwind CSS/ReactJS
+              HTML/CSS/Javascript/Typescript/Tailwind
+              CSS/ReactJS/NextJS/Mantine/Responsive
             </p>
             {/* <ul className="list-disc ml-5">
               <li>HTML</li>
@@ -78,7 +118,9 @@ const ResumePage = () => {
             </p>
 
             <h4 className="text-lg font-bold text-gray-500 mt-4">Other</h4>
-            <p className="italic">Git/GitHub/Basic English</p>
+            <p className="italic">
+              Git/GitHub/Deployment (Vercel, Render)/Basic English
+            </p>
           </div>
 
           <h1 className="my-5 text-[rgb(69,80,91)] text-2xl font-bold uppercase">
@@ -91,17 +133,21 @@ const ResumePage = () => {
               color="rgb(5,99,187)"
               isVisible={isVisible}
             />
-
             <SkillProgress
               label="Time management"
               percentage={85}
               color="rgb(5,99,187)"
               isVisible={isVisible}
             />
-
             <SkillProgress
               label="Work under high pressure"
               percentage={80}
+              color="rgb(5,99,187)"
+              isVisible={isVisible}
+            />
+            <SkillProgress
+              label="Arrange work"
+              percentage={90}
               color="rgb(5,99,187)"
               isVisible={isVisible}
             />
@@ -150,47 +196,8 @@ const ResumePage = () => {
               2021 - Present
             </h5>
             <p className="mb-1">Faculty of information technology</p>
-            <p className="mb-1">GPA: 3.23</p>
+            <p className="mb-1">GPA: 3.27</p>
           </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-4 w-full">
-        <div className="flex flex-col items-center">
-          <div className="rounded-full bg-[rgb(5,99,187)] p-5">
-            <Smile color="white" />
-          </div>
-          <span className="font-bold text-4xl text-[#272829CC]">
-            <AnimatedCounter endValue={95} isVisible={isVisible} />
-          </span>
-          <p className="text-[#27282980] ">Team work</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <div className="rounded-full bg-[rgb(5,99,187)] p-5">
-            <Smile color="white" />
-          </div>
-          <span className="font-bold text-4xl text-[#272829CC]">
-            <AnimatedCounter endValue={85} isVisible={isVisible} />
-          </span>
-          <p className="text-[#27282980] ">Time management</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <div className="rounded-full bg-[rgb(5,99,187)] p-5">
-            <Smile color="white" />
-          </div>
-          <span className="font-bold text-4xl text-[#272829CC]">
-            <AnimatedCounter endValue={80} isVisible={isVisible} />
-          </span>
-          <p className="text-[#27282980] ">Work under high pressure</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <div className="rounded-full bg-[rgb(5,99,187)] p-5">
-            <Smile color="white" />
-          </div>
-          <span className="font-bold text-4xl text-[#272829CC]">
-            <AnimatedCounter endValue={90} isVisible={isVisible} />
-          </span>
-          <p className="text-[#27282980] ">Arrange work</p>
         </div>
       </div>
     </div>
