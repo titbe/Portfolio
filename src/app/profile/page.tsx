@@ -1,17 +1,21 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
-import portraitPhoto from "../../../public/imgs/portrait-photo.jpg";
-import { ChevronRight } from "lucide-react";
+import React, { useState } from "react";
+import portraitPhoto from "../../../public/imgs/avaProfile.jpg";
+import { ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { getAge } from "@/utils/common";
+import { PdfModal } from "@/components/PdfModal";
 
 const ProfilePage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div className="absolute inset-0 bg-slate-100/40 z-0"></div>
 
       <div className="relative z-10 container mx-auto flex flex-col items-center gap-6 h-full pl-12">
         <h1 className="text-5xl font-bold text-[rgb(69,80,91)] border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
-          {" "}
           Profile
         </h1>
         <p className="text-base text-gray-700 text-center w-full">
@@ -25,7 +29,7 @@ const ProfilePage = () => {
           environments.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full items-start md:items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full items-center md:items-start">
           <div className="flex justify-center md:justify-start">
             <Image
               src={portraitPhoto}
@@ -35,8 +39,7 @@ const ProfilePage = () => {
               className="object-cover rounded-xl shadow-xl"
             />
           </div>
-
-          <div className="md:col-span-2 flex flex-col text-left gap-4">
+          <div className="md:col-span-2 flex flex-col items-center md:items-start gap-4">
             <h2 className="text-3xl font-semibold text-gray-800">
               Web Developer
             </h2>
@@ -101,6 +104,23 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
+
+        <div className="flex gap-5 w-full items-center justify-center md:justify-end">
+          <ChevronsRight className="animate-move-right" />
+          <button
+            onClick={() => setIsOpen(true)}
+            className="animate-zoom transition-transform duration-500 text-blue-600"
+          >
+            Click here to see my CV
+          </button>
+          <ChevronsLeft className="animate-move-left" />
+        </div>
+
+        <PdfModal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          fileUrl="/files/CV-PhamMinhHieu.pdf"
+        />
       </div>
     </>
   );
