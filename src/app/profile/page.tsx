@@ -34,8 +34,8 @@ const ProfilePage = () => {
             <Image
               src={portraitPhoto}
               alt="Portrait Photo"
-              height={300}
-              width={300}
+              height={220}
+              width={220}
               className="object-cover rounded-xl shadow-xl"
             />
           </div>

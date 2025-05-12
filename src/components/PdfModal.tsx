@@ -6,11 +6,7 @@ interface PdfModalProps {
   fileUrl: string;
 }
 
-export const PdfModal = ({
-  isOpen,
-  onClose,
-  fileUrl,
-}: PdfModalProps) => {
+export const PdfModal = ({ isOpen, onClose, fileUrl }: PdfModalProps) => {
   if (!isOpen) return null;
 
   return (
@@ -38,6 +34,7 @@ export const PdfModal = ({
           display: "flex",
           flexDirection: "column",
         }}
+        // className="bg-[#fff] rounded-lg overflow-hidden flex flex-col w-[90%] h-[90%]"
       >
         {/* PDF Viewer */}
         <div style={{ flex: 1 }}>

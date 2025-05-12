@@ -1,5 +1,5 @@
 "use client";
-import { House, Settings, User, Menu, X, FileText } from "lucide-react";
+import { House, User, Menu, X, FileText, Folder } from "lucide-react";
 import Image from "next/image";
 import { ReactNode, useState, useEffect } from "react";
 
@@ -13,9 +13,7 @@ const menuItems: MenuItem[] = [
   { icon: <House />, text: "Home", sectionId: "home" },
   { icon: <User />, text: "Profile", sectionId: "profile" },
   { icon: <FileText />, text: "Resume", sectionId: "resume" },
-  { icon: <House />, text: "Dashboard", sectionId: "dashboard" },
-  { icon: <User />, text: "Account", sectionId: "account" },
-  { icon: <Settings />, text: "Config", sectionId: "config" },
+  { icon: <Folder />, text: "Project", sectionId: "project" },
 ];
 
 const SidebarMenu = () => {
