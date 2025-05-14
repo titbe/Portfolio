@@ -1,7 +1,7 @@
 import ProfilePage from "./profile/page";
 import HomePage from "./home/page";
 import ResumePage from "./resume/page";
-import { ProjectPage } from "./project/page";
+import ProjectPage from "./project/page";
 
 export default function Home() {
   return (

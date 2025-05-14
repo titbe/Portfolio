@@ -2,7 +2,7 @@ import { Card } from "@/components/Card";
 import { projectsData } from "@/data/data";
 import React from "react";
 
-export const ProjectPage = () => {
+const ProjectPage = () => {
   return (
     <>
       <div className="absolute inset-0 bg-[#1A2A59] z-0"></div>
@@ -22,3 +22,5 @@ export const ProjectPage = () => {
     </>
   );
 };
+
+export default ProjectPage;
