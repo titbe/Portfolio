@@ -1,6 +1,7 @@
 import ProfilePage from "./profile/page";
-import HomePage  from "./home/page";
+import HomePage from "./home/page";
 import ResumePage from "./resume/page";
+import { ProjectPage } from "./project/page";
 
 export default function Home() {
   return (
@@ -23,7 +24,15 @@ export default function Home() {
         id="resume"
         className="relative min-h-screen overflow-hidden my-3"
       >
-        <ResumePage/>
+        <ResumePage />
+      </section>
+
+      {/* Project Section */}
+      <section
+        id="project"
+        className="relative min-h-screen overflow-hidden my-3"
+      >
+        <ProjectPage />
       </section>
 
       {/* Dashboard Section */}
