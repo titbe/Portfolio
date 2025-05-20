@@ -1,51 +1,99 @@
+"use client";
+
 import SidebarMenu from "@/components/SidebarMenu";
 import Typewriter from "@/components/Typewriter";
 import { Facebook, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import hanoiBackground from "../../../public/imgs/hanoi-background.jpg";
+import portraitPhoto from "../../../public/imgs/portrait-photo.jpg";
+import MusicPlayer from "@/components/MusicPlayer";
 
 const HomePage = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
-    <>
+    <div className="relative w-full min-h-screen overflow-hidden">
+      {/* Background chỉ cho HomePage */}
       <Image
         src={hanoiBackground}
         alt="Hanoi Background"
-        className="object-cover w-full h-full"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
         priority
       />
+      {/* Overlay mờ */}
+      <div className="absolute inset-0 bg-slate-100/60 dark:bg-gray-500/90 -z-10" />
 
-      <div className="absolute inset-0 bg-slate-100/40"></div>
-
+      {/* Sidebar */}
       <SidebarMenu />
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-20 text-right z-10 flex flex-col items-end gap-2">
-        <h1 className="w-full text-7xl font-bold z-20 text-[rgb(69,80,91)]">
-          Pham Minh Hieu
-        </h1>
-        <Typewriter
-          texts={["Hiếu", "a Web developer", "Fullstack Developer"]}
-          speed={100}
-        />
-        <div className="flex space-x-6 justify-end">
-          <a
-            href="https://www.facebook.com/pham.minh.hieu.677056"
-            target="_blank"
-          >
-            <Facebook className="hover:text-[#0866FF] hover:scale-150 transition-all duration-150" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/minh-hi%E1%BA%BFu-ph%E1%BA%A1m-453602327/"
-            target="_blank"
-          >
-            <Linkedin className="hover:text-[#0A66C2] hover:scale-150 transition-all duration-150" />
-          </a>
-          <a href="https://github.com/titbe" target="_blank">
-            <Github className="hover:scale-150 transition-all duration-150" />
-          </a>
+      {/* Main Content */}
+      <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 px-5 md:px-16 min-h-screen z-10">
+        {/* Text Section */}
+        <div className="text-center md:text-right flex flex-col items-center md:items-end gap-4 max-w-[500px]">
+          <h1 className="text-4xl md:text-6xl font-bold text-[rgb(69,80,91)] dark:text-sky-700 leading-tight">
+            Pham Minh Hieu
+          </h1>
+          <Typewriter
+            texts={["HIEU", "a Web developer", "Fullstack Developer"]}
+            speed={200}
+          />
+          <div className="flex space-x-6 mt-2">
+            <a
+              href="https://www.facebook.com/pham.minh.hieu.677056"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook
+                className="hover:text-[#0866FF] hover:scale-150 active:scale-125 transition-all duration-150"
+                size={40}
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/minh-hi%E1%BA%BFu-ph%E1%BA%A1m-453602327/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin
+                className="hover:text-[#0A66C2] hover:scale-150 active:scale-125 transition-all duration-150"
+                size={40}
+              />
+            </a>
+            <a
+              href="https://github.com/titbe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github
+                className="hover:text-[rgb(69,80,91)] hover:scale-150 active:scale-125 transition-all duration-150"
+                size={40}
+              />
+            </a>
+          </div>
+        </div>
+
+        {/* Avatar and Music Player Section */}
+        <div className="flex flex-col items-center">
+          {/* Avatar Section with conditional animation class */}
+          <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden shadow-xl">
+            <Image
+              src={portraitPhoto}
+              alt="Portrait Photo"
+              fill
+              className={`object-cover object-top animate-spin-slow ${
+                isPlaying ? "" : "paused-spin"
+              } transition-all duration-500`}
+              sizes="(max-width: 768px) 200px, 300px"
+              priority
+            />
+          </div>
+
+          {/* Music Player centered below avatar */}
+          <MusicPlayer setIsPlaying={setIsPlaying} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
+
 export default HomePage;

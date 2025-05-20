@@ -1,6 +1,6 @@
-import project1 from "../../public/imgs/avaProfile.jpg";
-import project2 from "../../public/imgs/hanoi-background.jpg";
-import project3 from "../../public/imgs/portrait-photo.jpg";
+import project1 from "../../public/imgs/lms.png";
+import project2 from "../../public/imgs/maxius.png";
+import project3 from "../../public/imgs/car-showcase.png";
 
 export const profileInfo = [
   { label: "Birthday", value: "01/08/2003" },
@@ -15,15 +15,25 @@ export const projectsData = [
     img: project1,
     name: "LMS Elearning",
     link: "https://lms-elearning-seven.vercel.app/",
+    techStack: [
+      "Nextjs",
+      "TailwindCSS",
+      "Typescript",
+      "Shadcn UI",
+      "Nodejs",
+      "MongoDB",
+    ],
   },
   {
     img: project2,
     name: "Maxius",
     link: "https://test-fe-maxius.vercel.app/",
+    techStack: ["Nextjs", "TailwindCSS"],
   },
   {
     img: project3,
     name: "Cars Showcase",
     link: "https://cars-showcase-ten-kappa.vercel.app/",
+    techStack: ["Nextjs", "TailwindCSS", "Typescript"],
   },
 ];

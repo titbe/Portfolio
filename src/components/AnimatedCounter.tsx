@@ -56,8 +56,10 @@ const AnimatedCounter = ({
   }, [isVisible, endValue, duration, hasAnimated]);
 
   return (
-    <span>
-      {prefix}{count}{suffix}
+    <span >
+      {prefix}
+      {count}
+      {suffix}
     </span>
   );
 };

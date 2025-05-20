@@ -35,20 +35,20 @@ const ResumePage = () => {
       ref={sectionRef}
       className="w-full px-6 md:px-20 z-10 flex flex-col justify-center items-center gap-1 h-full mx-auto"
     >
-      <h1 className="text-5xl font-bold text-[rgb(69,80,91)] border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
+      <h1 className="text-5xl font-bold text-[rgb(69,80,91)] dark:text-sky-500 border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
         Resume
       </h1>
 
       {/* Soft Skills */}
-      <div className="grid grid-cols-4 w-full mt-5">
+      <div className="grid md:grid-cols-4 grid-cols-2 w-full mt-5">
         <div className="flex flex-col items-center">
           <div className="rounded-full bg-[rgb(5,99,187)] p-5">
             <Users color="white" />
           </div>
-          <span className="font-bold text-4xl text-[#272829CC]">
+          <span className="font-bold text-4xl text-[#272829CC] dark:text-sky-500">
             <AnimatedCounter endValue={95} isVisible={isVisible} />
           </span>
-          <p className="text-[#27282980] text-center break-words max-w-[150px]">
+          <p className="text-[#27282980] dark:text-white text-center break-words max-w-[150px]">
             Team work
           </p>
         </div>
@@ -56,10 +56,10 @@ const ResumePage = () => {
           <div className="rounded-full bg-[rgb(5,99,187)] p-5">
             <Clock color="white" />
           </div>
-          <span className="font-bold text-4xl text-[#272829CC]">
+          <span className="font-bold text-4xl text-[#272829CC] dark:text-sky-500">
             <AnimatedCounter endValue={85} isVisible={isVisible} />
           </span>
-          <p className="text-[#27282980] text-center break-words max-w-[150px]">
+          <p className="text-[#27282980] dark:text-white text-center break-words max-w-[150px]">
             Time management
           </p>
         </div>
@@ -67,10 +67,10 @@ const ResumePage = () => {
           <div className="rounded-full bg-[rgb(5,99,187)] p-5">
             <Flame color="white" />
           </div>
-          <span className="font-bold text-4xl text-[#272829CC]">
+          <span className="font-bold text-4xl text-[#272829CC] dark:text-sky-500">
             <AnimatedCounter endValue={80} isVisible={isVisible} />
           </span>
-          <p className="text-[#27282980] text-center break-words max-w-[150px]">
+          <p className="text-[#27282980] dark:text-white text-center break-words max-w-[150px]">
             Work under high pressure
           </p>
         </div>
@@ -78,10 +78,10 @@ const ResumePage = () => {
           <div className="rounded-full bg-[rgb(5,99,187)] p-5">
             <CalendarCheck color="white" />
           </div>
-          <span className="font-bold text-4xl text-[#272829CC]">
+          <span className="font-bold text-4xl text-[#272829CC] dark:text-sky-500">
             <AnimatedCounter endValue={90} isVisible={isVisible} />
           </span>
-          <p className="text-[#27282980] text-center break-words max-w-[150px]">
+          <p className="text-[#27282980] dark:text-white text-center break-words max-w-[150px]">
             Arrange work
           </p>
         </div>
@@ -90,7 +90,7 @@ const ResumePage = () => {
       <div className="grid md:grid-cols-2 gap-5 w-full px-3">
         <div className="">
           {/* Summary */}
-          <h1 className="my-5 text-[rgb(69,80,91)] text-2xl font-bold uppercase">
+          <h1 className="my-5 text-[rgb(69,80,91)] dark:text-sky-500 text-2xl font-bold uppercase">
             Skills
           </h1>
 
@@ -123,7 +123,7 @@ const ResumePage = () => {
             </p>
           </div>
 
-          <h1 className="my-5 text-[rgb(69,80,91)] text-2xl font-bold uppercase">
+          <h1 className="my-5 text-[rgb(69,80,91)] dark:text-sky-500 text-2xl font-bold uppercase">
             Skill proficiency level
           </h1>
           <div className="border-[rgb(5,99,187)] border-l-2 pl-5">
@@ -155,14 +155,14 @@ const ResumePage = () => {
         </div>
 
         <div className="">
-          <h1 className="my-5 text-[rgb(69,80,91)] text-2xl font-bold uppercase">
+          <h1 className="my-5 text-[rgb(69,80,91)] dark:text-sky-500 text-2xl font-bold uppercase">
             Work Experience
           </h1>
           <div className="border-[rgb(5,99,187)] border-l-2 pl-5">
             <h4 className="font-bold text-gray-500 mb-2">
               MCI CONSULTING AND ANALYTICS JOINT STOCK COMPANY
             </h4>
-            <h5 className="text-base italic font-semibold text-[rgb(69,80,91)] mx-3 my-1">
+            <h5 className="text-base italic font-semibold text-[rgb(69,80,91)] dark:text-sky-500 mx-3 my-1">
               09/2024 - 12/2024
             </h5>
 
@@ -185,14 +185,14 @@ const ResumePage = () => {
           </div>
 
           {/* Education */}
-          <h1 className="my-5 text-[rgb(69,80,91)] text-2xl font-bold uppercase">
+          <h1 className="my-5 text-[rgb(69,80,91)] dark:text-sky-500 text-2xl font-bold uppercase">
             Education
           </h1>
           <div className="border-[rgb(5,99,187)] border-l-2 pl-5">
             <h4 className="text-lg font-bold text-gray-500 mb-2">
               Electric Power University (EPU)
             </h4>
-            <h5 className="text-base italic font-semibold text-[rgb(69,80,91)] mx-3 my-1">
+            <h5 className="text-base italic font-semibold text-[rgb(69,80,91)] dark:text-sky-500 mx-3 my-1">
               2021 - Present
             </h5>
             <p className="mb-1">Faculty of information technology</p>

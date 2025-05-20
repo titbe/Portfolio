@@ -61,7 +61,7 @@ const Typewriter = ({
   }, [currentTextIndex, displayedText, isDeleting, isWaiting, texts, speed]);
 
   return (
-    <div className="flex gap-2 font-mono text-2xl text-gray-800">
+    <div className="flex gap-2 font-mono text-2xl text-gray-800 dark:text-white">
       <p>I&rsquo;m</p>
       <p className="italic underline decoration-[rgb(5,99,187)]">
         {displayedText}

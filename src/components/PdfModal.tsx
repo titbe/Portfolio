@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 interface PdfModalProps {
   isOpen: boolean;
@@ -7,6 +7,14 @@ interface PdfModalProps {
 }
 
 export const PdfModal = ({ isOpen, onClose, fileUrl }: PdfModalProps) => {
+  useEffect(() => {
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    if (isOpen && isMobile) {
+      window.open(fileUrl, "_blank");
+      onClose();
+    }
+  }, [isOpen, fileUrl, onClose]); // ✅ Lỗi 2 cũng được fix ở đây
+
   if (!isOpen) return null;
 
   return (
@@ -34,20 +42,23 @@ export const PdfModal = ({ isOpen, onClose, fileUrl }: PdfModalProps) => {
           display: "flex",
           flexDirection: "column",
         }}
-        // className="bg-[#fff] rounded-lg overflow-hidden flex flex-col w-[90%] h-[90%]"
       >
-        {/* PDF Viewer */}
         <div style={{ flex: 1 }}>
-          <iframe
-            src={`${fileUrl}#toolbar=0`}
-            title="PDF Viewer"
+          <object
+            data={fileUrl}
+            type="application/pdf"
             width="100%"
             height="100%"
-            style={{ border: "none" }}
-          />
+          >
+            <p>
+              Your browser does not support viewing PDFs.{" "}
+              <a href={fileUrl} target="_blank" rel="noopener noreferrer">
+                Open PDF
+              </a>
+            </p>
+          </object>
         </div>
 
-        {/* Footer Buttons */}
         <div className="flex justify-between gap-4">
           <button
             onClick={onClose}
@@ -55,7 +66,6 @@ export const PdfModal = ({ isOpen, onClose, fileUrl }: PdfModalProps) => {
           >
             Cancel
           </button>
-
           <a
             href={fileUrl}
             download

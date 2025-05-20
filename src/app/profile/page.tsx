@@ -14,11 +14,28 @@ const ProfilePage = () => {
     <>
       <div className="absolute inset-0 bg-slate-100/40 z-0"></div>
 
-      <div className="relative z-10 container mx-auto flex flex-col items-center gap-6 h-full pl-12">
-        <h1 className="text-5xl font-bold text-[rgb(69,80,91)] border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
+      <div className="relative z-10 container mx-auto flex flex-col items-center gap-3 h-full px-5">
+        <h1 className="text-5xl font-bold text-[rgb(69,80,91)] dark:text-sky-500 border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
           Profile
         </h1>
-        <p className="text-base text-gray-700 text-center w-full">
+        <div className="flex gap-5 w-full items-center justify-center md:justify-end">
+          <ChevronsRight className="animate-move-right" />
+          <button
+            onClick={() => setIsOpen(true)}
+            className="animate-zoom transition-transform duration-500 text-blue-600 dark:text-blue-300 text-xl font-bold"
+          >
+            Click here to see my CV
+          </button>
+          <ChevronsLeft className="animate-move-left" />
+        </div>
+
+        <PdfModal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          fileUrl="/files/CV-PhamMinhHieu.pdf"
+        />
+
+        <p className="text-base text-center w-full dark:text-white">
           A passionate and detail-oriented Front-end Developer with a strong
           foundation in UI/UX principles, specializing in building responsive
           and user-friendly web applications using React, Next.js, and Tailwind
@@ -40,23 +57,23 @@ const ProfilePage = () => {
             />
           </div>
           <div className="md:col-span-2 flex flex-col items-center md:items-start gap-4">
-            <h2 className="text-3xl font-semibold text-gray-800">
+            <h2 className="text-3xl font-semibold text-gray-800 dark:text-sky-500">
               Web Developer
             </h2>
 
             <div className="flex flex-col lg:flex-row gap-3">
               {/* First column */}
               <ul className="flex-1 flex flex-col gap-3">
-                <li className="grid grid-cols-[auto_1fr] items-start gap-2 text-gray-700">
+                <li className="grid grid-cols-[auto_1fr] items-start gap-2">
                   <div className="flex items-center gap-2">
-                    <ChevronRight color="#0563bb" size={20} />
+                    <ChevronRight className="text-sky-500" size={20} />
                     <strong>Birthday:</strong>
                   </div>
                   <p>01/08/2003</p>
                 </li>
-                <li className="grid grid-cols-[auto_1fr] items-start gap-2 text-gray-700">
+                <li className="grid grid-cols-[auto_1fr] items-start gap-2">
                   <div className="flex items-center gap-2">
-                    <ChevronRight color="#0563bb" size={20} />
+                    <ChevronRight className="text-sky-500" size={20} />
                     <strong>Location:</strong>
                   </div>
                   <a
@@ -68,9 +85,9 @@ const ProfilePage = () => {
                     Tay Ho, Hanoi, Vietnam
                   </a>
                 </li>
-                <li className="grid grid-cols-[auto_1fr] items-start gap-2 text-gray-700">
+                <li className="grid grid-cols-[auto_1fr] items-start gap-2">
                   <div className="flex items-center gap-2">
-                    <ChevronRight color="#0563bb" size={20} />
+                    <ChevronRight className="text-sky-500" size={20} />
                     <strong>Email:</strong>
                   </div>
                   <a
@@ -84,16 +101,16 @@ const ProfilePage = () => {
 
               {/* Second column */}
               <ul className="flex-1 flex flex-col gap-3">
-                <li className="grid grid-cols-[auto_1fr] items-start gap-2 text-gray-700">
+                <li className="grid grid-cols-[auto_1fr] items-start gap-2">
                   <div className="flex items-center gap-2">
-                    <ChevronRight color="#0563bb" size={20} />
+                    <ChevronRight className="text-sky-500" size={20} />
                     <strong>Age:</strong>
                   </div>
                   <p>{getAge(2003)}</p>
                 </li>
-                <li className="grid grid-cols-[auto_1fr] items-start gap-2 text-gray-700">
+                <li className="grid grid-cols-[auto_1fr] items-start gap-2">
                   <div className="flex items-center gap-2">
-                    <ChevronRight color="#0563bb" size={20} />
+                    <ChevronRight className="text-sky-500" size={20} />
                     <strong>Phone number:</strong>
                   </div>
                   <a href="tel:0835556482" className="hover:underline">
@@ -104,23 +121,6 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
-
-        <div className="flex gap-5 w-full items-center justify-center md:justify-end">
-          <ChevronsRight className="animate-move-right" />
-          <button
-            onClick={() => setIsOpen(true)}
-            className="animate-zoom transition-transform duration-500 text-blue-600"
-          >
-            Click here to see my CV
-          </button>
-          <ChevronsLeft className="animate-move-left" />
-        </div>
-
-        <PdfModal
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-          fileUrl="/files/CV-PhamMinhHieu.pdf"
-        />
       </div>
     </>
   );

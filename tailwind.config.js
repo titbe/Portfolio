@@ -8,11 +8,9 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
-      animation: {
-        "blink-fast": "blink 0.8s steps(1) infinite",
-      },
       keyframes: {
         blink: {
           "0%, 100%": { opacity: 1 },
@@ -32,6 +30,7 @@ module.exports = {
         },
       },
       animation: {
+        "blink-fast": "blink 0.8s steps(1) infinite",
         "move-left": "move-left 1s infinite ease-in-out",
         "move-right": "move-right 1s infinite ease-in-out",
         zoom: "zoom 1s ease-in-out infinite",
