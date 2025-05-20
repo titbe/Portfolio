@@ -70,7 +70,7 @@ const SidebarMenu = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []); // ✅ Chỉ run 1 lần
+  }, [activeSection]); // ✅ Chỉ run 1 lần
 
   return (
     <>
@@ -112,9 +112,9 @@ const SidebarMenu = () => {
             toggled={isDark}
             duration={750}
             className="!text-inherit text-2xl"
-            // onPointerEnterCapture={() => {}}
-            // onPointerLeaveCapture={() => {}}
-            // placeholder=""
+            onPointerEnterCapture={() => {}}
+            onPointerLeaveCapture={() => {}}
+            placeholder=""
           />
           <span className="font-medium">{isDark ? "Dark" : "Light"}</span>
         </div>
