@@ -42,35 +42,17 @@ const SidebarMenu = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = menuItems.map((item) =>
-        document.getElementById(item.sectionId)
-      );
-
-      let currentSection = "";
-      let maxVisibility = 0;
-
-      sections.forEach((section) => {
-        if (!section) return;
-
-        const rect = section.getBoundingClientRect();
-        const visibility =
-          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-
-        if (visibility > maxVisibility) {
-          maxVisibility = visibility;
-          currentSection = section.id;
-        }
-      });
-
-      if (currentSection && currentSection !== activeSection) {
-        setActiveSection(currentSection);
+    const handleSectionChange = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      if (customEvent.detail && customEvent.detail !== activeSection) {
+        setActiveSection(customEvent.detail);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [activeSection]); // ✅ Chỉ run 1 lần
+    window.addEventListener("sectionChange", handleSectionChange);
+    return () =>
+      window.removeEventListener("sectionChange", handleSectionChange);
+  }, [activeSection]);
 
   return (
     <>

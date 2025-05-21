@@ -13,9 +13,9 @@ export const Card = ({ name, img, link, techStack }: CardProp) => {
     <Link
       href={link}
       target="_blank"
-      className="bg-white rounded-xl shadow-md p-4 w-full hover:scale-105 transition-transform"
+      className="bg-white dark:bg-black/55 rounded-xl shadow-md p-4 w-full hover:scale-105 transition-transform"
     >
-      <div className="w-full h-[300px] md:h-[500px] overflow-hidden rounded-lg">
+      <div className="w-full h-[300px] md:h-[400px] overflow-hidden rounded-lg">
         <Image
           src={img}
           alt={name}
@@ -27,7 +27,9 @@ export const Card = ({ name, img, link, techStack }: CardProp) => {
       <h2 className="text-2xl font-bold mt-2">{name}</h2>
       <ul className="mt-2 list-disc list-inside italic text-gray-700">
         {techStack.map((tech, index) => (
-          <li key={index}>{tech}</li>
+          <li key={index} className="dark:text-gray-400">
+            {tech}
+          </li>
         ))}
       </ul>
     </Link>

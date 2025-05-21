@@ -6,9 +6,13 @@ import portraitPhoto from "../../../public/imgs/avaProfile.jpg";
 import { ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { getAge } from "@/utils/common";
 import { PdfModal } from "@/components/PdfModal";
+import useInView from "@/hooks/useInView";
 
 const ProfilePage = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [avatarRef, isAvatarInView] = useInView();
+
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (
     <>
@@ -47,7 +51,16 @@ const ProfilePage = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full items-center md:items-start">
-          <div className="flex justify-center md:justify-start">
+          <div
+            ref={avatarRef}
+            className={`flex justify-center md:justify-start ${
+              isAvatarInView
+                ? isMobile
+                  ? "animate-fade-in-up"
+                  : "animate-fade-in-left"
+                : "opacity-0"
+            }`}
+          >
             <Image
               src={portraitPhoto}
               alt="Portrait Photo"

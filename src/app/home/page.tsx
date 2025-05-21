@@ -8,29 +8,42 @@ import React, { useState } from "react";
 import hanoiBackground from "../../../public/imgs/hanoi-background.jpg";
 import portraitPhoto from "../../../public/imgs/portrait-photo.jpg";
 import MusicPlayer from "@/components/MusicPlayer";
+import useInView from "@/hooks/useInView";
 
 const HomePage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const [avatarRef, isAvatarInView] = useInView();
+  const [textRef, isTextInView] = useInView();
+
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Background chỉ cho HomePage */}
+      {/* Background */}
       <Image
         src={hanoiBackground}
         alt="Hanoi Background"
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
         priority
       />
-      {/* Overlay mờ */}
       <div className="absolute inset-0 bg-slate-100/60 dark:bg-gray-500/90 -z-10" />
 
-      {/* Sidebar */}
       <SidebarMenu />
 
-      {/* Main Content */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 px-5 md:px-16 min-h-screen z-10">
-        {/* Text Section */}
-        <div className="text-center md:text-right flex flex-col items-center md:items-end gap-4 max-w-[500px]">
+        {/* Text */}
+        <div
+          ref={textRef}
+          className={`text-center md:text-right flex flex-col items-center md:items-end gap-4 max-w-[500px]
+          ${
+            isTextInView
+              ? isMobile
+                ? "animate-fade-in-up"
+                : "animate-fade-in-left"
+              : "opacity-0"
+          }`}
+        >
           <h1 className="text-4xl md:text-6xl font-bold text-[rgb(69,80,91)] dark:text-sky-700 leading-tight">
             Pham Minh Hieu
           </h1>
@@ -72,9 +85,17 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Avatar and Music Player Section */}
-        <div className="flex flex-col items-center">
-          {/* Avatar Section with conditional animation class */}
+        {/* Avatar */}
+        <div
+          ref={avatarRef}
+          className={`flex flex-col items-center ${
+            isAvatarInView
+              ? isMobile
+                ? "animate-fade-in-down"
+                : "animate-fade-in-right"
+              : "opacity-0"
+          }`}
+        >
           <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden shadow-xl">
             <Image
               src={portraitPhoto}
@@ -87,8 +108,6 @@ const HomePage = () => {
               priority
             />
           </div>
-
-          {/* Music Player centered below avatar */}
           <MusicPlayer setIsPlaying={setIsPlaying} />
         </div>
       </div>
