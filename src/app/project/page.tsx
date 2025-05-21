@@ -1,3 +1,5 @@
+"use client";
+
 import { Card } from "@/components/Card";
 import { projectsData } from "@/data/data";
 import useInView from "@/hooks/useInView";
