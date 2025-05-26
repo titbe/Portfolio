@@ -71,7 +71,7 @@ const SidebarMenu = () => {
         className="fixed top-2 left-2 z-50 group"
       >
         <Image
-          src="/logo.ico"
+          src="/logo.png"
           alt="Logo"
           width={80}
           height={80}
