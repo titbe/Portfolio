@@ -160,9 +160,9 @@ const ResumePage = () => {
             <p className="font-bold text-gray-500 mb-2">
               MCI CONSULTING AND ANALYTICS JOINT STOCK COMPANY
             </p>
-            <h5 className="text-base italic font-semibold text-gray-900 dark:text-sky-300 mx-3 my-1">
+            <p className="text-base italic font-semibold text-gray-900 dark:text-sky-300 mx-3 my-1">
               09/2024 - 12/2024
-            </h5>
+            </p>
 
             <p className="mb-1">Intern Frontend-End Developer</p>
             <ul className="list-disc ml-5">
@@ -190,9 +190,9 @@ const ResumePage = () => {
             <p className="text-lg font-bold text-gray-500 mb-2">
               Electric Power University (EPU)
             </p>
-            <h5 className="text-base italic font-semibold text-gray-900 dark:text-sky-300 mx-3 my-1">
+            <p className="text-base italic font-semibold text-gray-900 dark:text-sky-300 mx-3 my-1">
               2021 - Present
-            </h5>
+            </p>
             <p className="mb-1">Faculty of information technology</p>
             <p className="mb-1">GPA: 3.27</p>
           </div>
