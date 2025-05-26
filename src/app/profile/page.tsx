@@ -19,7 +19,7 @@ const ProfilePage = () => {
       <div className="absolute inset-0 bg-slate-100/40 z-0"></div>
 
       <div className="relative z-10 container mx-auto flex flex-col items-center gap-3 h-full px-5">
-        <h1 className="text-5xl font-bold text-[rgb(69,80,91)] dark:text-sky-500 border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
+        <h1 className="text-5xl font-bold text-gray-900 dark:text-sky-500 border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
           Profile
         </h1>
         <div className="flex gap-5 w-full items-center justify-center md:justify-end">

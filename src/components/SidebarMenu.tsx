@@ -75,6 +75,7 @@ const SidebarMenu = () => {
           alt="Logo"
           width={80}
           height={80}
+          priority
           className="rounded-md"
         />
       </button>

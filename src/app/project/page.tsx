@@ -12,7 +12,7 @@ const ProjectPage = () => {
     <>
       <div className="absolute inset-0 z-0 bg-[#1A2A59]"></div>
       <div className="relative z-10 container mx-auto flex flex-col items-center gap-3 h-full px-5">
-        <h1 className="relative text-5xl font-bold text-[rgb(69,80,91)] dark:text-sky-500 border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
+        <h1 className="relative text-5xl font-bold text-gray-900 dark:text-sky-500 border-b-4 border-sky-500 p-3 mt-12 md:mt-0">
           Project
         </h1>
         <div className="relative container mx-auto flex flex-col items-center gap-6 h-full px-10">

@@ -44,7 +44,7 @@ const HomePage = () => {
               : "opacity-0"
           }`}
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-[rgb(69,80,91)] dark:text-sky-700 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-sky-700 leading-tight">
             Pham Minh Hieu
           </h1>
           <Typewriter
@@ -56,6 +56,7 @@ const HomePage = () => {
               href="https://www.facebook.com/pham.minh.hieu.677056"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook profile"
             >
               <Facebook
                 className="hover:text-[#0866FF] hover:scale-150 active:scale-125 transition-all duration-150"
@@ -66,6 +67,7 @@ const HomePage = () => {
               href="https://www.linkedin.com/in/minh-hi%E1%BA%BFu-ph%E1%BA%A1m-453602327/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
             >
               <Linkedin
                 className="hover:text-[#0A66C2] hover:scale-150 active:scale-125 transition-all duration-150"
@@ -76,9 +78,10 @@ const HomePage = () => {
               href="https://github.com/titbe"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub profile"
             >
               <Github
-                className="hover:text-[rgb(69,80,91)] hover:scale-150 active:scale-125 transition-all duration-150"
+                className="hover:text-gray-900 hover:scale-150 active:scale-125 transition-all duration-150"
                 size={40}
               />
             </a>
